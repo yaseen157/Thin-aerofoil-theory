@@ -31,8 +31,7 @@ cmd > `py -m pip uninstall thinaerofoils-yaseen157`<br>
 
 ---
 
-## Hello World
-Provided the install worked, you can get started with this package using 4-digit NACA foils.
+## Hello World.
 This package currently only supports 4-digit NACA aerofoils:<br>
 py > `from thinaerofoils.inviscidanalysis import NACA4digit`<br>
 py > `myfoil = NACA4digit(foil="2412")`<br>
