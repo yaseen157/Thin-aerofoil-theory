@@ -77,14 +77,15 @@ class NACA4digit:
         # Plot the lift-curve
         alphas = np.linspace(np.radians(-20), np.radians(20), 2)
         clift = [self.f_Cl(x) for x in alphas]
-        zerolifta = (clift[0] - alphas[0] * 2 * np.pi) / (-2 * np.pi)
-        zeroliftstr = "$\\alpha_{L=0}$=" + f"{np.degrees(zerolifta):.2f}"
+        zeroliftstr = "$\\alpha_{L=0}$="
+        zeroliftstr += f"{np.degrees(self.zeroliftAoA_rad):.2f}"
         axd["lift"].plot(np.degrees(alphas), clift, "r")
         axd["lift"].plot(
             np.degrees(alphas), alphas * 2 * np.pi,
             ls="-.", c="black", alpha=0.8, label="d$C_l$/d$\\alpha$=$2\\pi$")
         axd["lift"].plot(
-            np.degrees(zerolifta), 0, "x", c="blue", label=zeroliftstr)
+            np.degrees(self.zeroliftAoA_rad), 0,
+            "x", c="blue", label=zeroliftstr)
         axd["lift"].set_title("$C_l$ vs $\\alpha$")
         axd["lift"].set_xlabel("Angle of Attack ($\\alpha$) [deg]")
         axd["lift"].set_ylabel("$C_l$")
@@ -176,10 +177,6 @@ class NACA4digit:
 
 
 if __name__ == "__main__":
-
-    # Constants
-    FSAOA_RAD = np.radians(10)
-    FSVELOCITY_MPS = 10
 
     myfoil = NACA4digit(foil="2412")
     myfoil.show2()
