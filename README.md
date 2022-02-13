@@ -25,7 +25,7 @@ cmd > `py -m pip install ./downloads/thinaerofoils-yaseen157-x.x.x.tar.gz`<br>
 ## Windows Uninstallation Instructions
 > Using information from:<br>
 > https://pip.pypa.io/en/stable/cli/pip_uninstall/<br>
-1. Open a command prompt in the environment linelaunchsim is installed in.<br>
+1. Open a command prompt in the environment thinaerofoils is installed in.<br>
 2. Type the following into the command prompt
 cmd > `py -m pip uninstall thinaerofoils-yaseen157`<br>
 
